@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host:     localhost
+  pool: 5
+  username: prashanth
+  password: password
+development:
+  <<: *default
+  database: elas_app_dev
+test:
+  <<: *default
+  database: elas_app_test
+production:
+  <<: *default
+  database: elastic_search_db_pro
+  password: <%= ENV['DATABASE_PASSWORD'] %>
