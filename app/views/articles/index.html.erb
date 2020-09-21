@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<%= form_tag(articles_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :query, params[:query], placeholder: "Search", class: "form-control" %>  
+    <div class="input-group-btn">  
+      <br>
+      <%= button_tag "Search", :class => '',:name => nil%>  
+    </div>  
+  </div>  
+<% end %>
+
+<% if @articles.present? %>
+
+<h1>Listing Articles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Body</th>
+      <th>Related to</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%@articles.each do |article| %>
+      <tr>
+        <td><%= article.try(:highlight).try(:name) ? article.highlight.name[0].html_safe : article.name %></td>
+        <td><%= article.body %></td>
+        <td><%= article.related_to %></td>
+        <td><%= link_to 'Show', article %></td>
+        <td><%= link_to 'Edit', edit_article_path(article) %></td>
+        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <%end %>
+  </tbody>
+</table>
+
+<%else%>
+<h1>No articles present</h1>
+<%end%>
+<br>
+
+<%= link_to 'New Article', new_article_path %>
+
+<style type="text/css">
+  em {
+  background: yellow;
+}
+</style>

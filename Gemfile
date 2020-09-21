@@ -6,8 +6,13 @@ gem 'rails', '4.2.10'
 # Use postgresql as the database for Active Record
 #gem 'pg', '~> 0.15'
 gem 'pg', "~> 0.21"
-gem "chewy"
-gem 'active_model_serializers'
+gem  "httparty"
+
+#gem "chewy"
+#gem 'chewy', '~> 5.1'
+#gem 'active_model_serializers'
+gem  "elasticsearch-model"
+gem  "elasticsearch-rails"
 gem 'kaminari' # for pagination
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

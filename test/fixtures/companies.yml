@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  industry: MyText
+  turn_over: 1
+  established_date: 2020-09-21
+  type_of_company: MyString
+
+two:
+  name: MyString
+  industry: MyText
+  turn_over: 1
+  established_date: 2020-09-21
+  type_of_company: MyString

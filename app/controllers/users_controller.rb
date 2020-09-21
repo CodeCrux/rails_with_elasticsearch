@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 	
-  def search
-    user_search = UserSearch.new(search_params)
-    @users = user_search.search
+  # def search
+  #   # user_search = UserSearch.new(search_params)
+  #   # @users = user_search.search
 
-    render json: @users, status: :ok
-  end
+  #   # render json: @users, status: :ok
+  # end
 
   def find
  

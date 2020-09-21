@@ -1,11 +1,17 @@
 class PostsController < ApplicationController
+  #require HTTParty
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
-    #@posts = Post.all
-    @posts = Post.search(params[:search])
+    @posts = Post.all
+    #@posts = Post.search(params[:search])
+    #@posts = http
+#response = HTTParty.get('http://api.stackexchange.com/2.2/questions?site=stackoverflow')
+#puts response.class
+#response = HTTParty.get('http://127.0.0.1:3000/users/search')    #response = HTTParty.get('http://api.stackexchange.com/2.2/questions?site=stackoverflow')
+ #   puts 'response =============================================== #{response.body}'
   end
 
   # GET /posts/1
